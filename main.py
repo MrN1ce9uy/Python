@@ -24,7 +24,7 @@ def mileage():
 	print ("Gas:", gas)
 	print ("MPG:", mpg)
 
-#Define
+#Define variable
 menuSelection = 0
 
 #Decision loop
