@@ -20,7 +20,7 @@ def mileage():
 	mpg = miles / gas
 	#Print values
 	print ("Miles:", miles)
-	print ("Gas:", gas)
+	print ("Gallons:", gas)
 	print ("MPG:", mpg)
 
 #Define variable
