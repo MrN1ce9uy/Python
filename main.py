@@ -4,7 +4,7 @@
 #Define payroll function
 def payroll():
 	#Payroll calculations
-	hours = float(input("Enter number of hours: "))
+	hours = float(input("Enter number of hours worked: "))
 	rate = float(input("Enter hourly rate: "))
 	amount = hours * rate
 	#Print values
@@ -15,8 +15,8 @@ def payroll():
 #Define mileage function
 def mileage():
 	#MPG calculations
-	miles = float(input("Enter number of miles: "))
-	gas = float(input("Enter gallons of gas: "))
+	miles = float(input("Enter number of miles traveled: "))
+	gas = float(input("Enter gallons of gas consumed: "))
 	mpg = miles / gas
 	#Print values
 	print ("Miles:", miles)
