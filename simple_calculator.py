@@ -25,13 +25,13 @@ def main():
 
     def div():
         if num2 == 0:
-            quotient = "You cannot divide by Zero"
+            print("The Result of",num1,"/",num2,"= You cannot divide by Zero")
         else:
             quotient = num1 / num2
             print("The Result of",num1,"/",num2,"=", quotient)
 
     #If-else
-    if num1 < rangeLower or num2 > rangeHigher:
+    if num1 < rangeLower or num1 > rangeHigher or num2 < rangeLower or num2 > rangeHigher:
         print("The input values are outside the input ranges.")
         print("Please check the number and try again.")
         print("Thanks for using our calculator")
@@ -49,7 +49,7 @@ main()
 #While-loop
 x = 0
 while x != "n":
-    print("Would you like to make another calculation? Y/N")
+    print("Would you like to make another calculation? y/n")
     x = input()
-    if x == 'Y' or 'y':
+    if x == 'y':
         main()
