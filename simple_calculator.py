@@ -3,28 +3,31 @@ print("This is a simple calculator.")
 
 #Define the main program function
 def main():
-    #Ask user for ranges
+    #Ask user for ranges. String inputs are not accepted and caught as exceptions. While loop repeats asking user for input until a float number is input.
     while True:
         try:
             rangeLower = float(input("Enter your Lower range: "))
         except ValueError:
             print("You must enter a number!")
         else:
+            #Break the while-loop
             break
     while True:
         try:
             rangeHigher = float(input("Enter your Higher range: "))
         except ValueError:
-            print("You must inter a number!")
+            print("You must enter a number!")
         else:
+            #Break the while-loop
             break
-    #Ask user for numbers
+    #Ask user for numbers. String inputs are not accepted and caught as exceptions. While loop repeats asking user for input until a float number is input.
     while True:
         try:
             num1 = float(input("Enter your First number: "))
         except ValueError:
             print("You must enter a number!")
         else:
+            #Break the while-loop
             break
     while True:
         try:
@@ -32,6 +35,7 @@ def main():
         except ValueError:
             print("You must enter a number!")
         else:
+            #Break the while-loop
             break
     #Define formula functions
     def add():
