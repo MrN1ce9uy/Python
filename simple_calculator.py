@@ -12,7 +12,7 @@ def main():
                 print("You must enter a number!")
             else:
                 break
-    #Define variables        
+    #Declare variables        
     rangeLower = float_input("Enter your Lower range: ")
     rangeHigher = float_input("Enter your Higher range: ")
     num1 = float_input("Enter your First number: ")
