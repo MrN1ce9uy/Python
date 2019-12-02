@@ -1,15 +1,45 @@
+# Program name    Wk3P1_john_files.py
+# Student Name    John Files
+# Course          ENTD220
+# Instructor      Georgia Brown
+# Date            11/24/2019
+# Description     This code will aske the user for a lower range and a higher range.  Then it will ask the user for the first number and then the second number.  Then it will provide the sum, difference, product, and quotient of the two numbers. Then it will ask the user to repeat the program or not.  
+
 #Program start
 print("This is a simple calculator.")
 
+#Define the main program function
 def main():
     #Ask user for ranges
-    rangeLower = float(input("Enter your Lower range: "))
-    rangeHigher = float(input("Enter your Higher range: "))
-
-    #Get user input
-    num1 = float(input("Enter your First number: "))
-    num2 = float(input("Enter your Second number: "))
-
+    while True:
+        try:
+            rangeLower = float(input("Enter your Lower range: "))
+        except ValueError:
+            print("You must enter a number!")
+        else:
+            break
+    while True:
+        try:
+            rangeHigher = float(input("Enter your Higher range: "))
+        except ValueError:
+            print("You must inter a number!")
+        else:
+            break
+    #Ask user for numbers
+    while True:
+        try:
+            num1 = float(input("Enter your First number: "))
+        except ValueError:
+            print("You must enter a number!")
+        else:
+            break
+    while True:
+        try:
+            num2 = float(input("Enter your Second number: "))
+        except ValueError:
+            print("You must enter a number!")
+        else:
+            break
     #Define formula functions
     def add():
         sum = num1 + num2
