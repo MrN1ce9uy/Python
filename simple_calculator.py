@@ -1,10 +1,3 @@
-# Program name    Wk3P1_john_files.py
-# Student Name    John Files
-# Course          ENTD220
-# Instructor      Georgia Brown
-# Date            11/24/2019
-# Description     This code will aske the user for a lower range and a higher range.  Then it will ask the user for the first number and then the second number.  Then it will provide the sum, difference, product, and quotient of the two numbers. Then it will ask the user to repeat the program or not.  
-
 #Program start
 print("This is a simple calculator.")
 
