@@ -35,6 +35,7 @@ def div(n1, n2):
         print(n1,"/",n2,"=", quotient)
 
 def allInOne(n1, n2):
+    #Store values in dictionary. 
     res = {"add": add(n1, n2), "sub": sub(n1, n2), "mult": mult(n1, n2), "div": div(n1, n2)}
     
 
@@ -43,7 +44,7 @@ menuSelection = 0
 
 #While statement to loop menu.
 while menuSelection != 6:
-    #Declare a list to store the menu items.
+    #Store menu items in a list.
     menuList = ["1. Press 1 for Addition.", "2. Press 2 for Subtraction.", "3. Press 3 for Multiplication.", "4. Press 4 for Division.", "5. Press 5 for All in one.", "6. Press 6 to exit."]
     #Loop through items in list.
     for item in menuList:
