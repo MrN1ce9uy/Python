@@ -5,6 +5,7 @@ print("This is a simple calculator.")
 def main():
     #Define input function
     def float_input(msg):
+        #Some exception handling
         while True:
             try:
                 return float(input(msg))
