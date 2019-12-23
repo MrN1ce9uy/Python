@@ -27,7 +27,7 @@ class Arithmetic:
             print(n1, "/",n2,"=", quotient)
     def allInOne(self, n1, n2):
         # Store values in dictionary (not required, just excercising dictionary skill)
-        res = {"add": add(n1, n2), "sub": sub(n1, n2), "mult": mult(n1, n2), "div": div(n1, n2)}
+         res = {"add": arith.add(n1, n2), "sub": arith.sub(n1, n2), "mult": arith.mult(n1, n2), "div": arith.div(n1, n2)}
 
 # Create an instance of the Arithmetic class.  This was required, else I was getting an error. 
 arith = Arithmetic()
