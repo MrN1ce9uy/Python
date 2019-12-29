@@ -1,8 +1,12 @@
 print("Hello, this is a simple calculator.\n")
 
-# Declare global variables for later use.
+# Declare global variables.
 n1 = 0
 n2 = 0
+sum1 = 0
+diff = 0
+product = 0
+quotient = 0
 
 # Define Arithmetic class.
 class Arithmetic:
@@ -15,19 +19,19 @@ class Arithmetic:
             else:
                 break
     def add(self):
-        global n1, n2
+        global n1, n2, sum1
         sum1 = n1 + n2
         return sum1
     def sub(self):
-        global n1, n2
+        global n1, n2, diff
         diff = n1 - n2
         return diff
     def mult(self):
-        global n1, n2
+        global n1, n2, product
         product = n1 * n2
         return product
     def div(self):
-        global n1, n2
+        global n1, n2, quotient
         if n2 == 0:
             print(n1,"/",n2,"= You cannot divide by Zero")
         else:
@@ -52,6 +56,7 @@ class Arithmetic:
         n1 = arith.float_input("Enter your First number: ")
         n2 = arith.float_input("Enter your Second number: ")
         return n1, n2
+    
 # Create an instance of the Arithmetic class. 
 arith = Arithmetic()
 
@@ -109,5 +114,9 @@ while menuSelection != 9:
         wr.read()
     elif menuSelection == 8:
         arith.userInput()
+        arith.add()
+        arith.sub()
+        arith.mult()
+        arith.div()
     elif menuSelection == 9:
         exit
