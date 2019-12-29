@@ -12,37 +12,33 @@ class Arithmetic:
                 break
     def add(self, n1, n2):
         sum1 = n1 + n2
-        print(n1,"+",n2,"=", sum1)
         return sum1
     def sub(self, n1, n2):
         diff = n1 - n2
-        print(n1,"-",n2,"=", diff)
         return diff
     def mult(self, n1, n2):
         product = n1 * n2
-        print(n1,"*",n2, "=", product)
         return product
     def div(self, n1, n2):
         if n2 == 0:
             print(n1,"/",n2,"= You cannot divide by Zero")
         else:
             quotient = n1 / n2
-            print(n1, "/",n2,"=", quotient)
             return quotient
     def allInOne(self, n1, n2):
         # Store values in dictionary. 
         result = {"add": arith.add(n1, n2), "sub": arith.sub(n1, n2), "mult": arith.mult(n1, n2), "div": arith.div(n1, n2)}
+        return result
 
 # Create an instance of the Arithmetic class. 
 arith = Arithmetic()
 
-# Declare variables. Ask user for input and use the exception handling function.  
-# An instance of the class was required to pass the paramaters to the function.    
+# Declare variables. Ask user for input and use the exception handling function.      
 n1 = arith.float_input("Enter your First number: ")
 n2 = arith.float_input("Enter your Second number: ")
 
-# Assign values returned from functions as variables
-num1 = arith.add(n1,n2)
+# Assign values returned from functions to variables
+sum1 = arith.add(n1,n2)
 diff = arith.sub(n1,n2)
 product = arith.mult(n1,n2)
 quotient = arith.div(n1,n2)
@@ -51,10 +47,11 @@ quotient = arith.div(n1,n2)
 class wrfile:
     def write(self):
         with open("results.txt", "w") as write_file:
-            write_file.write(str(num1)+"\n")
-            write_file.write(str(diff)+"\n")
-            write_file.write(str(product)+"\n")
-            write_file.write(str(quotient))
+            write_file.write(str(n1)+" + "+str(n2)+" = "+str(sum1)+"\n")
+            write_file.write(str(n1)+" - "+str(n2)+" = "+str(diff)+"\n")
+            write_file.write(str(n1)+" * "+str(n2)+" = "+str(product)+"\n")
+            write_file.write(str(n1)+" / "+str(n2)+" = "+str(quotient))
+            write_file.close
     def read(self):
         with open("results.txt", "r") as read_file:
             text = read_file.read()
@@ -76,15 +73,15 @@ while menuSelection != 8:
     # Get user input for menu selection.
     menuSelection = float(input())
     if menuSelection == 1:
-        arith.add(n1, n2)
+        print(n1,"+" ,n2,"=", sum1)
     elif menuSelection == 2:
-        arith.sub(n1, n2)
+        print(n1,"-",n2,"-", diff)
     elif menuSelection == 3:
-        arith.mult(n1, n2)
+        print(n1,"*",n2, "=", product)
     elif menuSelection == 4:
-        arith.div(n1, n2)
+        print(n1,"/",n2, "=", quotient)
     elif menuSelection == 5:
-        arith.allInOne(n1, n2)
+        print(arith.allInOne(n1,n2))
     elif menuSelection == 6:
         wr.write()
     elif menuSelection == 7:
