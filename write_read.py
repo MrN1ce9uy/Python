@@ -1,4 +1,4 @@
-# Created by MrN1ce9uy
+#Created by MrN1ce9uy for final project in ENTD220 Intro to Python course at APUS.
 print("Hello, this is a simple calculator.\n")
 
 # Declare global variables.
@@ -57,14 +57,14 @@ class Arithmetic:
         n1 = arith.float_input("Enter your First number: ")
         n2 = arith.float_input("Enter your Second number: ")
         return n1, n2
-    
+
 # Create an instance of the Arithmetic class. 
 arith = Arithmetic()
 
-# Call the userInput() function to ask user for input
+# Call the userInput() function to ask user for input.
 arith.userInput()
 
-# Assign values returned from functions to variables
+# Assign values returned from functions to variables. Also call arith functions to perform calculations.
 sum1 = arith.add()
 diff = arith.sub()
 product = arith.mult()
@@ -72,14 +72,14 @@ quotient = arith.div()
 
 # Define wrfile class.
 class wrfile:
-    def write(self):
+    def write(self): # Define write function.
         with open("results.txt", "w") as write_file:
             write_file.write(str(n1)+" + "+str(n2)+" = "+str(sum1)+"\n")
             write_file.write(str(n1)+" - "+str(n2)+" = "+str(diff)+"\n")
             write_file.write(str(n1)+" * "+str(n2)+" = "+str(product)+"\n")
             write_file.write(str(n1)+" / "+str(n2)+" = "+str(quotient))
             write_file.close
-    def read(self):
+    def read(self): # Define read function.
         with open("results.txt", "r") as read_file:
             text = read_file.read()
             print(text)
@@ -92,12 +92,9 @@ menuSelection = 0
 
 # While statement to loop menu.
 while menuSelection != 9:
-    # Store menu items in a list.
     menuList = ["\n1. Press 1 for Addition.", "2. Press 2 for Subtraction.", "3. Press 3 for Multiplication.", "4. Press 4 for Division.", "5. Press 5 for All in one.", "6. Press 6 to write results to file.", "7. Press 7 to read results from file.", "8. Press 8 for a new calculation.", "9. Press 9 to exit."]
-    # Loop through items in list.
     for item in menuList:
         print(item)
-    # Get user input for menu selection.
     menuSelection = float(input())
     if menuSelection == 1:
         print(n1,"+" ,n2,"=", sum1)
@@ -114,7 +111,9 @@ while menuSelection != 9:
     elif menuSelection == 7:
         wr.read()
     elif menuSelection == 8:
+        # Ask user for new input.
         arith.userInput()
+        # Call arith functions to perform calculations again with new input.
         arith.add()
         arith.sub()
         arith.mult()
