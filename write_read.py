@@ -26,9 +26,18 @@ class Arithmetic:
             quotient = n1 / n2
             return quotient
     def allInOne(self, n1, n2):
+        sum2 = n1 + n2
+        diff2 = n1 - n2
+        product2 = n1 * n2
+        quotient2 = n1 / n2
         # Store values in dictionary. 
-        result = {"add": arith.add(n1, n2), "sub": arith.sub(n1, n2), "mult": arith.mult(n1, n2), "div": arith.div(n1, n2)}
-        return result
+        result = {"add": sum2, "sub": diff2, "mult": product2, "div": quotient2}
+        # Convert dictionary to list
+        result = list(result.values())
+        print(n1," + ",n2," = ", result[0])
+        print(n1," - ",n2," = ", result[1])
+        print(n1," * ",n2," = ", result[2])
+        print(n1," / ",n2," = ", result[3])
 
 # Create an instance of the Arithmetic class. 
 arith = Arithmetic()
@@ -43,7 +52,7 @@ diff = arith.sub(n1,n2)
 product = arith.mult(n1,n2)
 quotient = arith.div(n1,n2)
 
-# Define write class.
+# Define wrfile class.
 class wrfile:
     def write(self):
         with open("results.txt", "w") as write_file:
@@ -81,7 +90,7 @@ while menuSelection != 8:
     elif menuSelection == 4:
         print(n1,"/",n2, "=", quotient)
     elif menuSelection == 5:
-        print(arith.allInOne(n1,n2))
+        arith.allInOne(n1,n2)
     elif menuSelection == 6:
         wr.write()
     elif menuSelection == 7:
