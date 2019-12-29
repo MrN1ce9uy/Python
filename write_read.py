@@ -1,3 +1,4 @@
+# Created by MrN1ce9uy
 print("Hello, this is a simple calculator.\n")
 
 # Declare global variables.
