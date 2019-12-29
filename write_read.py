@@ -1,5 +1,9 @@
 print("Hello, this is a simple calculator.\n")
 
+# Declare global variables for later use.
+n1 = 0
+n2 = 0
+
 # Define Arithmetic class.
 class Arithmetic:
     def float_input(self, msg): # Use this function for exception handling during user input.
@@ -10,22 +14,27 @@ class Arithmetic:
                 print("You must enter a number!")
             else:
                 break
-    def add(self, n1, n2):
+    def add(self):
+        global n1, n2
         sum1 = n1 + n2
         return sum1
-    def sub(self, n1, n2):
+    def sub(self):
+        global n1, n2
         diff = n1 - n2
         return diff
-    def mult(self, n1, n2):
+    def mult(self):
+        global n1, n2
         product = n1 * n2
         return product
-    def div(self, n1, n2):
+    def div(self):
+        global n1, n2
         if n2 == 0:
             print(n1,"/",n2,"= You cannot divide by Zero")
         else:
             quotient = n1 / n2
             return quotient
-    def allInOne(self, n1, n2):
+    def allInOne(self):
+        global n1, n2
         sum2 = n1 + n2
         diff2 = n1 - n2
         product2 = n1 * n2
@@ -38,19 +47,22 @@ class Arithmetic:
         print(n1," - ",n2," = ", result[1])
         print(n1," * ",n2," = ", result[2])
         print(n1," / ",n2," = ", result[3])
-
+    def userInput(self):
+        global n1, n2
+        n1 = arith.float_input("Enter your First number: ")
+        n2 = arith.float_input("Enter your Second number: ")
+        return n1, n2
 # Create an instance of the Arithmetic class. 
 arith = Arithmetic()
 
-# Declare variables. Ask user for input and use the exception handling function.      
-n1 = arith.float_input("Enter your First number: ")
-n2 = arith.float_input("Enter your Second number: ")
+# Call the userInput() function to ask user for input
+arith.userInput()
 
 # Assign values returned from functions to variables
-sum1 = arith.add(n1,n2)
-diff = arith.sub(n1,n2)
-product = arith.mult(n1,n2)
-quotient = arith.div(n1,n2)
+sum1 = arith.add()
+diff = arith.sub()
+product = arith.mult()
+quotient = arith.div()
 
 # Define wrfile class.
 class wrfile:
@@ -73,9 +85,9 @@ wr = wrfile()
 menuSelection = 0
 
 # While statement to loop menu.
-while menuSelection != 8:
+while menuSelection != 9:
     # Store menu items in a list.
-    menuList = ["\n1. Press 1 for Addition.", "2. Press 2 for Subtraction.", "3. Press 3 for Multiplication.", "4. Press 4 for Division.", "5. Press 5 for All in one.", "6. Press 6 to write results to file.", "7. Press 7 to read results from file.", "8. Press 8 to exit."]
+    menuList = ["\n1. Press 1 for Addition.", "2. Press 2 for Subtraction.", "3. Press 3 for Multiplication.", "4. Press 4 for Division.", "5. Press 5 for All in one.", "6. Press 6 to write results to file.", "7. Press 7 to read results from file.", "8. Press 8 for a new calculation.", "9. Press 9 to exit."]
     # Loop through items in list.
     for item in menuList:
         print(item)
@@ -90,10 +102,12 @@ while menuSelection != 8:
     elif menuSelection == 4:
         print(n1,"/",n2, "=", quotient)
     elif menuSelection == 5:
-        arith.allInOne(n1,n2)
+        arith.allInOne()
     elif menuSelection == 6:
         wr.write()
     elif menuSelection == 7:
         wr.read()
     elif menuSelection == 8:
+        arith.userInput()
+    elif menuSelection == 9:
         exit
