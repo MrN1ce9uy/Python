@@ -19,6 +19,12 @@ class Arithmetic:
                 print("You must enter a number!")
             else:
                 break
+    def menu_input(self):
+        while True:
+            try:
+                return int(input())
+            except ValueError:
+                print("You must enter a number 1-9!")
     def add(self):
         global n1, n2, sum1
         sum1 = n1 + n2
@@ -95,7 +101,7 @@ while menuSelection != 9:
     menuList = ["\n1. Press 1 for Addition.", "2. Press 2 for Subtraction.", "3. Press 3 for Multiplication.", "4. Press 4 for Division.", "5. Press 5 for All in one.", "6. Press 6 to write results to file.", "7. Press 7 to read results from file.", "8. Press 8 for a new calculation.", "9. Press 9 to exit."]
     for item in menuList:
         print(item)
-    menuSelection = float(input())
+    menuSelection = arith.menu_input()
     if menuSelection == 1:
         print(n1,"+" ,n2,"=", sum1)
     elif menuSelection == 2:
