@@ -5,7 +5,7 @@ import random
 # Print welcome message
 print ("Welcome to Battleship!")
 
-# Define main function
+# Define function
 def battleship():
     randomLoc = math.floor(random.randint(0,4))
     location1 = randomLoc
@@ -33,5 +33,5 @@ def battleship():
                 print ("You sank my battleship!")
                 input()
 
-# Call main function
+# Call function
 battleship()
