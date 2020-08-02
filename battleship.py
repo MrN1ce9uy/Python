@@ -31,7 +31,15 @@ def battleship():
             if hits == 3:
                 isSunk = True
                 print ("You sank my battleship!")
-                input()
 
 # Call function
 battleship()
+
+playAgain = 0
+
+# Play again loop.. could use improved logic.
+while playAgain != "n":
+    print("Play again? y/n")
+    playAgain = input()
+    if playAgain == "y":
+        battleship()
