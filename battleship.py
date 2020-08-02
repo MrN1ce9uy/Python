@@ -7,6 +7,7 @@ print ("Welcome to Battleship!")
 
 # Define function
 def battleship():
+    # Declare variables
     randomLoc = math.floor(random.randint(0,8))
     location1 = randomLoc
     location2 = location1 + 1
@@ -35,9 +36,10 @@ def battleship():
 # Call function
 battleship()
 
+# Declare playAgain variable
 playAgain = 0
 
-# Play again loop.. could use improved logic.
+# Play again loop
 while playAgain != "n":
     print("Play again? y/n")
     playAgain = input()
