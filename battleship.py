@@ -7,7 +7,7 @@ print ("Welcome to Battleship!")
 
 # Define function
 def battleship():
-    randomLoc = math.floor(random.randint(0,4))
+    randomLoc = math.floor(random.randint(0,8))
     location1 = randomLoc
     location2 = location1 + 1
     location3 = location2 + 1
@@ -18,8 +18,8 @@ def battleship():
 
     # Main loop
     while isSunk == False:
-        guess = int(input("Ready, aim, fire! Enter a number 0-6:"))
-        if guess < 0 or guess > 6 :
+        guess = int(input("Ready, aim, fire! Enter a number 0-10:"))
+        if guess < 0 or guess > 10 :
             print ("Please enter a valid cell number!")   
         else: 
             guesses = guesses + 1
