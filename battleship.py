@@ -34,8 +34,10 @@ def battleship():
 # Call function
 battleship()
 
+# Declare variable
 playAgain = 0
 
+# Play again loop
 while playAgain != 2:
     print("Play again?")
     playAgain = ["1. Press 1 to play again.", "2. Press 2 to exit."]
