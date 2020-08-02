@@ -2,12 +2,10 @@
 import math
 import random
 
-# Print welcome message
 print ("Welcome to Battleship!")
 
 # Define function
 def battleship():
-    # Declare variables
     randomLoc = math.floor(random.randint(0,8))
     location1 = randomLoc
     location2 = location1 + 1
@@ -19,9 +17,9 @@ def battleship():
 
     # Main loop
     while isSunk == False:
-        guess = int(input("Ready, aim, fire! Enter a number 0-10:"))
+        guess = int(input("READY, AIM, FIRE! Enter a number 0-10:"))
         if guess < 0 or guess > 10 :
-            print ("Please enter a valid cell number!")   
+            print ("Please enter a valid cell number!")
         else: 
             guesses = guesses + 1
             if guess == location1 or guess == location2 or guess == location3:
@@ -36,12 +34,15 @@ def battleship():
 # Call function
 battleship()
 
-# Declare playAgain variable
 playAgain = 0
 
-# Play again loop
-while playAgain != "n":
-    print("Play again? y/n")
-    playAgain = input()
-    if playAgain == "y":
+while playAgain != 2:
+    print("Play again?")
+    playAgain = ["1. Press 1 to play again.", "2. Press 2 to exit."]
+    for item in playAgain:
+        print(item)
+    playAgain = int(input())
+    if playAgain == 1:
         battleship()
+    elif playAgain == 2:
+        exit
