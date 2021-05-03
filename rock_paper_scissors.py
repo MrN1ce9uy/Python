@@ -15,13 +15,13 @@ while player == False:
             print("You lose...", computer, "covers", player)
         else:
             print("You win!", player, "smashes", computer)
-    elif player == "Paper":
-        if computer == "Scissors" | "scissors":
+    elif player == "Paper" | "paper":
+        if computer == "Scissors":
             print("You lose...", computer, "cut", player)
         else:
             print("You win!", player, "covers", computer)
-    elif player == "Scissors":
-        if computer == "Rock" | "rock":
+    elif player == "Scissors" | "scissors":
+        if computer == "Rock":
             print("You lose...", computer, "smashes", player)
         else:
             print("You win!", player, "cut", computer)
