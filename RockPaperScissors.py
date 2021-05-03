@@ -25,6 +25,8 @@ while player == False:
             print("You lose...", computer, "smashes", player)
         else:
             print("You win!", player, "cut", computer)
+    elif player == "Exit" | "exit":
+        quit()
     else:
         print("That's not a valid play. Choose Rock, Paper, Sicissors or check your spelling!")
 
