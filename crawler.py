@@ -48,7 +48,7 @@ siteData = [
             'section#product-description'],
         ['Reuters', 'http://reuters.com', 'http://www.reuters.com/search/news?blob=',
             'div.search-result=content', 'h3.search-result-title a', False, 'h1',
-            'div.StandardArticleBody+body+1gnLA',
+            'div.StandardArticleBody_body_1gnLA',
             'https://www.brookings.edu/search/?s=', 'div.list-content article',
             'h4.title a', True, 'h1', 'div.post-body']
         ]
