@@ -54,7 +54,6 @@ class Content:
                     targetPage = '{}{}'.formate(self.site.url, targetPage)
                 self.parse(targetPage)
 
-
 class Crawler:
     
     def getPage(self, url):
@@ -104,9 +103,10 @@ siteData = [
             'https://www.brookings.edu/search/?s=', 'div.list-content article',
             'h4.title a', True, 'h1', 'div.post-body']
         ]
+
 sites = []
 for row in siteData:
-    sites.append(siteData(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7]))
+    sites.append(Website(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7]))
 
 topics = ['python', 'data science']
 for topic in topics:
@@ -114,7 +114,7 @@ for topic in topics:
     for targetSite in sites:
         crawler.search(topic, targetSiteo)
 
-reuters = Website('Reuters', 'https://www.reuters.com', '^(/article/)', False, 'h1', 'div.StandardArticleBodyy_body_1gnLA')
+reuters = Website('Reuters', 'https://www.reuters.com', '^(/article/)', False, 'h1', 'div.StandardArticleBody_body_1gnLA')
 crawler = Crawler(reuters)
 crawler.crawl()
 
