@@ -31,7 +31,7 @@ def throws():
     dice = roll(roll_number)
     dice.sort()
     for i in range(len(dice)):
-        print "Dice",i + i,":",names[dice[i]]
+        print "Dice",i + 1,":",names[dice[i]]
 
     result = hand(dice)
     print "You currently have", result
