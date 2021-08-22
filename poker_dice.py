@@ -70,7 +70,7 @@ def throws():
             while iterations < rerolls:
                 iterations = iterations + 1
                 replacement = dice_rerolls[iterations-1]
-                dice[dice_changes[iterations]] = replacement
+                dice[dice_changes[iterations-1]] = replacement
 
             dice.sort()
             for i in range(len(dice)):
