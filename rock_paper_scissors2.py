@@ -1,5 +1,7 @@
 #! /usr/bin/python2
 
+# Linux User & Developer presents: Rock, Paper, Scissors: The Video Game
+
 import random
 import time
 
