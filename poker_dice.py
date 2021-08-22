@@ -63,8 +63,8 @@ def throws():
                 except ValueError:
                     pass
                 print "Oops! I didn't understand that. Please enter 1, 2, 3, 4 or 5."
-                dice_changes[iterations-1] = selection-1
-                print "You have changed dice", selection
+            dice_changes[iterations-1] = selection-1
+            print "You have changed dice", selection
 
             iterations = 0
             while iterations < rerolls:
@@ -74,7 +74,7 @@ def throws():
 
             dice.sort()
             for i in range(len(dice)):
-                print "Dice",i + i,":",names[dice[i]]
+                print "Dice",i + 1,":",names[dice[i]]
 
             result = hand(dice)
             print "You finish with", result
