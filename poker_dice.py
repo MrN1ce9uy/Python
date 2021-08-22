@@ -72,7 +72,7 @@ def throws():
             dice[dice_changes[iterations-1]] = replacement
 
         dice.sort()
-            or i in range(len(dice)):
+        for i in range(len(dice)):
             print "Dice",i + 1,":",names[dice[i]]
 
         result = hand(dice)
