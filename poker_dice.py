@@ -45,39 +45,39 @@ def throws():
             pass
         print "Oops! I didn't understand that. Please enter 1, 2, 3, 4 or 5."
 
-        if rerolls == 0:
+    if rerolls == 0:
             print "You finish with", result
-        else:
-            roll_number = rerolls
-            dice_rerolls = roll(roll_number)
-            dice_changes = range(rerolls)
-            print "Enter the number of a dice to reroll: "
+    else:
+        roll_number = rerolls
+        dice_rerolls = roll(roll_number)
+        dice_changes = range(rerolls)
+        print "Enter the number of a dice to reroll: "
+        iterations = 0
+        while iterations < rerolls:
+            iterations = iterations + 1
+            while True:
+                selection = input("")
+                try:
+                    if selection in (1,2,3,4,5):
+                        break
+                except ValueError:
+                    pass
+                print "Oops! I didn't understand that. Please enter 1, 2, 3, 4 or 5."
+                dice_changes[iterations-1] = selection-1
+                print "You have changed dice", selection
+
             iterations = 0
             while iterations < rerolls:
                 iterations = iterations + 1
-                while True:
-                    selection = input("")
-                    try:
-                        if selection in (1,2,3,4,5):
-                            break
-                    except ValueError:
-                        pass
-                    print "Oops! I didn't understand that. Please enter 1, 2, 3, 4 or 5."
-                    dice_changes[iterations-1] = selection-1
-                    print "You have changed dice", selection
+                replacement = dice_rerolls[iterations-1]
+                dice[dice_changes[iterations]] = replacement
 
-                iterations = 0
-                while iterations < rerolls:
-                    iterations = iterations + 1
-                    replacement = dice_rerolls[iterations-1]
-                    dice[dice_changes[iterations]] = replacement
+            dice.sort()
+            for i in range(len(dice)):
+                print "Dice",i + i,":",names[dice[i]]
 
-                dice.sort()
-                for i in range(len(dice)):
-                    print "Dice",i + i,":",names[dice[i]]
-
-                result = hand(dice)
-                print "You finish with", result
+            result = hand(dice)
+            print "You finish with", result
 
 def roll(roll_number):
     numbers = range(1,7)
