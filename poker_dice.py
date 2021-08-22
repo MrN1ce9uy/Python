@@ -44,7 +44,6 @@ def throws():
         except ValueError:
             pass
         print "Oops! I didn't understand that. Please enter 1, 2, 3, 4 or 5."
-
     if rerolls == 0:
         print "You finish with", result
     else:
@@ -66,18 +65,18 @@ def throws():
             dice_changes[iterations-1] = selection-1
             print "You have changed dice", selection
 
-            iterations = 0
-            while iterations < rerolls:
-                iterations = iterations + 1
-                replacement = dice_rerolls[iterations-1]
-                dice[dice_changes[iterations-1]] = replacement
+        iterations = 0
+        while iterations < rerolls:
+            iterations = iterations + 1
+            replacement = dice_rerolls[iterations-1]
+            dice[dice_changes[iterations-1]] = replacement
 
-            dice.sort()
-            for i in range(len(dice)):
-                print "Dice",i + 1,":",names[dice[i]]
+        dice.sort()
+            or i in range(len(dice)):
+            print "Dice",i + 1,":",names[dice[i]]
 
-            result = hand(dice)
-            print "You finish with", result
+        result = hand(dice)
+        print "You finish with", result
 
 def roll(roll_number):
     numbers = range(1,7)
