@@ -14,6 +14,7 @@ rules = { rock: scissors, paper: rock, scissors: paper }
 
 player_score = 0
 computer_score = 0
+tie_score = 0
 
 def start():
     print "Let's play a game of Rock, Paper, Scissors."
@@ -29,10 +30,10 @@ def game():
 	
 def move():
     while True:
-	print
-	player = raw_input("Rock = 1\nPaper = 2\nScissors = 3\nMake a move: ")
-	try:
-	    player = int(player)
+        print
+        player = raw_input("Rock = 1\nPaper = 2\nScissors = 3\nMake a move: ")
+        try:
+            player = int(player)
 	    if player in (1,2,3):
 		return player
 	except ValueError:
@@ -47,9 +48,10 @@ def result (player, computer):
     print "3!"
     time.sleep(0.5)
     print "Computer threw {0}!".format(names[computer])
-    global player_score, computer_score
+    global player_score, computer_score, tie_score
     if player == computer:
 	print "Tie game."
+	tie_score += 1
     else:
 	if rules[player] == computer:
 	    print "Your victory has been assured."
@@ -70,6 +72,7 @@ def scores():
     print "HIGH SCORES"
     print "Player: ", player_score
     print "Computer: ", computer_score
+    print "Tie: ", tie_score
 	
 if __name__ == '__main__':
     start()
