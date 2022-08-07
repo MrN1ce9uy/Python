@@ -79,12 +79,12 @@ quotient = arith.div()
 # Define wrfile class.
 class wrfile:
     def write(self): # Define write function.
-        with open("results.txt", "w") as write_file:
-            write_file.write(str(n1)+" + "+str(n2)+" = "+str(sum1)+"\n")
-            write_file.write(str(n1)+" - "+str(n2)+" = "+str(diff)+"\n")
-            write_file.write(str(n1)+" * "+str(n2)+" = "+str(product)+"\n")
-            write_file.write(str(n1)+" / "+str(n2)+" = "+str(quotient))
-            write_file.close
+        with open("results.txt", "w") as wf:
+            wf.write(str(n1)+" + "+str(n2)+" = "+str(sum1)+"\n")
+            wf.write(str(n1)+" - "+str(n2)+" = "+str(diff)+"\n")
+            wf.write(str(n1)+" * "+str(n2)+" = "+str(product)+"\n")
+            wf.write(str(n1)+" / "+str(n2)+" = "+str(quotient))
+            wf.close
     def read(self): # Define read function.
         with open("results.txt", "r") as read_file:
             text = read_file.read()
